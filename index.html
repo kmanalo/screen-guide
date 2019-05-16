@@ -46,9 +46,17 @@
     <a name="setup"></a>
     <div class="scrollblock block-setup">
         <h2>Getting started</h2>
+	<p>If you've done this before and you just want to start cleanly, you could kill all screens on a server using 
+           <br /><code>pkill screen</code> first.
+	</p>
+	<p> Like you can read about in <br /><code>man screen</code><br />, 
+	screen is a "full-screen window manager".  When you launch screen in a terminal, 
+	you have basically started a window.  That means that if you are dropped from your spotty Wifi, make your laptop go to sleep, or disconnect from ssh, you can go back to exactly what you were doing because you were using a screen.
+	In the middle of a long-running command? Put it under a 'screen'.
+	</p>
         <p>
-	It's easy just type <code>screen</code>.  But if you've done this before and you just want to start cleanly, you could kill all screens on a server using 
-	<br /><code>pkill screen</code> first.
+	To start, it's easy just type <code>screen</code>.  Then you are under a screen! To help you understand, immediately type in your shell something like
+	<br /><code>echo this is my first screen</code><br />
         </p>
     </div>
     <a name="create"></a>
@@ -56,9 +64,9 @@
         <h2>Remember your hostname</h2>
         <p>
             Screen sessions live on the server where you start them, so remember where you started them, 
-            <br /><code>echo $HOSTNAME</code> 
+            <br /><code>echo $HOSTNAME</code><br />
             and be sure to 
-	    <br /><code>ssh $HOSTNAME # </code>.
+	    <br /><code>ssh $HOSTNAME</code><br />
 	    Some centers like to have round-robin login nodes, so ssh to the right server.
         </p>
     </div>
@@ -81,14 +89,9 @@
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>Listing screens</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
-            <code>hg add &lt;filename&gt;</code><br />
-            <code>hg add</code><br />
-            This is the first step in the basic hg workflow. To actually commit these changes use<br />
-            <code>hg commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            This is probably another go to command since you 
         </p>
     </div>
     <a name="push"></a>
