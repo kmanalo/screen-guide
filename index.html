@@ -67,11 +67,10 @@
     <div class="scrollblock block-create">
         <h2>Remember your hostname</h2>
         <p>
-            Screen sessions live on the server where you start them, so remember where you started them, 
-            <br /><code>echo $HOSTNAME</code><br />
-            and be sure to 
-	    <br /><code>ssh $HOSTNAME</code><br />
-	    Some places like to have round-robin login nodes, so ssh to the right server.
+            Some places like to have round-robin login nodes, so ssh to the right server.  
+	    Screen sessions live on the server where you start them, so remember where you started them!
+	    For example, if your screen sessions started on login-s1, 
+	    ssh to that server after you log in, <br />ssh login-s1<br /> if you aren't there already. 
         </p>
     </div>
     <a name="detach"></a>
@@ -128,12 +127,12 @@
 	    <code>exit</code>.<br />
         </p>
     </div>
-<!--     <a name="hints"></a>
+    <a name="hints"></a>
     <div class="scrollblock block-hints">
-        <h2>useful hints</h2>
+        <h2>useful tips</h2>
         <p>
-            first hint<br />
-            <code>hg</code><br />
+            If you find yourself not really needing to make multiple screens, if you are using Bash, add an alias!<br />
+            <code>alias screen='screen -D -R -S main'</code><br />
         </p>
     </div> -->
     <a name="resources"></a>
