@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
     <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-58178386-1']);
+      _gaq.push(['_setAccount', 'UA-33607733-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {
@@ -32,7 +32,7 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <p class="meta">
             by <a href="https://pace.gatech.edu/staff">Kevin Manalo</a>
-            <br />credits to <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a><br />
+            <br />credits to <a href="http://www.twitter.com/rogerdudler">Roger Dudler</a>
             <br />also inspired by <a href="http://blog.hanxiaogang.com/hg-guide/">Han Xiaogang</a><br />
             please report issues on <a href="https://github.com/kmanalo/screen-guide/issues">github</a>
             Yes, this is a fork of a fork.
@@ -45,14 +45,14 @@
     <!-- setup -->
     <a name="setup"></a>
     <div class="scrollblock block-setup">
-        <h2>setup</h2>
+        <h2>Getting started</h2>
         <p>
             <a href="http://mercurial.selenic.com/downloads">Download hg for OSX/Windows/Linux</a>
         </p>
     </div>
     <a name="create"></a>
     <div class="scrollblock block-create">
-        <h2>create a new repository</h2>
+        <h2>Remember your hostname</h2>
         <p>
             create a new directory, open it and perform a <br />
             <code>hg init</code><br />
@@ -61,7 +61,7 @@
     </div>
     <a name="checkout"></a>
     <div class="scrollblock block-checkout">
-        <h2>checkout a repository</h2>
+        <h2>Detach screen</h2>
         <p>
             create a working copy of a local repository by running the command<br />
             <code>hg clone /path/to/repository</code><br />
@@ -71,11 +71,11 @@
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
-        <h2>workflow</h2>
+        <h2>Attach to a screen</h2>
         <p>
-            Unlike git, which maintains three "trees" in your local repository: <code>Working Directory, Index, and HEAD</code>, Hg hides such it and handles it automatically so that the user don't need to deal with it.
+            If you have a single screen, it is as easy as <code>screen -r</code>, if there is more than one screen you'll need to choose a "pid", like in the picture below.
         </p>
-        <img src="img/trees.png" alt="" />
+        <img src="img/screen_attach.png" alt="" />
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
