@@ -43,33 +43,49 @@
         <img src="img/arrow.png" alt="" />
     </div>
     <!-- setup -->
-    <a name="setup"></a>
+    <a name="why"></a>
+    <div class="scrollblock block-checkout-replace">
+        <h2>Why</h2>
+	<p> Like you can read about in <br /><code>man screen</code><br />
+	screen is a "full-screen window manager".  When you launch screen in a terminal, 
+	you have basically started a window.  That means that if you are dropped from your spotty Wifi, make your laptop go to sleep, or disconnect from ssh, you can go back to exactly what you were doing because you were using a screen.
+	In the middle of a long-running command? Put it under a 'screen'.
+	</p>
+    </div>
+    <a name="getting started"></a>
     <div class="scrollblock block-setup">
         <h2>Getting started</h2>
+	<p>If you've done this before and you just want to start cleanly, you could kill all screens on a server using 
+           <br /><code>pkill screen</code> first.
+	</p>
         <p>
-            <a href="http://mercurial.selenic.com/downloads">Download hg for OSX/Windows/Linux</a>
+	To start, it's easy just type <code>screen</code>.  Then you are under a screen! To help you understand, immediately type in your shell something like
+	<br /><code>echo this is my first screen</code><br /> enter this command, then continue on below.
         </p>
     </div>
-    <a name="create"></a>
+    <a name="remember your hostname"></a>
     <div class="scrollblock block-create">
         <h2>Remember your hostname</h2>
         <p>
-            create a new directory, open it and perform a <br />
-            <code>hg init</code><br />
-            to create a new hg repository.
+            Screen sessions live on the server where you start them, so remember where you started them, 
+            <br /><code>echo $HOSTNAME</code><br />
+            and be sure to 
+	    <br /><code>ssh $HOSTNAME</code><br />
+	    Some places like to have round-robin login nodes, so ssh to the right server.
         </p>
     </div>
-    <a name="checkout"></a>
+    <a name="detach"></a>
     <div class="scrollblock block-checkout">
         <h2>Detach screen</h2>
         <p>
-            create a working copy of a local repository by running the command<br />
-            <code>hg clone /path/to/repository</code><br />
-            when using a remote server, your command will be<br />
-            <code>hg clone username@host:/path/to/repository</code>
+            This is the one SEQUENCE to remember, detach a screen by typing this sequence on your keyboard.<br />
+            <td><kbd class="keyboard-key nowrap" style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); color: #000; padding: 0.1em 0.3em; font-family: inherit; font-size: 0.85em;">Ctrl</kbd>+<kbd class="keyboard-key nowrap" style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); color: #000; padding: 0.1em 0.3em; font-family: inherit; font-size: 0.85em;">a</kbd>, <small>then</small> <kbd class="keyboard-key nowrap" style="border: 1px solid #aaa; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; border-radius: 0.2em; -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1); background-color: #f9f9f9; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee); color: #000; padding: 0.1em 0.3em; font-family: inherit; font-size: 0.85em;">d</kbd>
+</td>
+	    <br />
+            This is the probably the only thing about screen you may need to memorize (at first).
         </p>
     </div>
-    <a name="trees"></a>
+    <a name="attach"></a>
     <div class="scrollblock block-trees">
         <h2>Attach to a screen</h2>
         <p>
@@ -79,106 +95,34 @@
     </div>
     <a name="add"></a>
     <div class="scrollblock block-add">
-        <h2>add &amp; commit</h2>
+        <h2>Listing screens</h2>
         <p>
-            You can propose changes (add it to the <b>Index</b>) using<br />
-            <code>hg add &lt;filename&gt;</code><br />
-            <code>hg add</code><br />
-            This is the first step in the basic hg workflow. To actually commit these changes use<br />
-            <code>hg commit -m "Commit message"</code><br />
-            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+            This is probably another go to command since you probably want to be list your screen sessions.
+	    <br /><code>screen -ls</code>.
         </p>
     </div>
-    <a name="push"></a>
+    <a name="naming"></a>
     <div class="scrollblock block-remote">
-        <h2>pushing changes</h2>
+        <h2>Naming screen sessions</h2>
         <p>
-            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
-            <code>hg push</code><br />
-
-            <code>hg push -b branch_name</code><br />
-            Change <i>master</i> to whatever branch you want to push your changes to.
-            <br /><br />
-            If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it in .hg/hgrc<br />
-            <code>[paths]</code><br />
-            <code>default = &lt;server&gt;</code><br />
-            Now you are able to push your changes to the selected remote server<br />
-
+            If you like, you can initially screen a name, after all it's hard to remember random PIDs:
+	    <br /><code> screen -S your_session_name </code><br />
         </p>
     </div>
-    <a name="branching"></a>
+    <a name="force"></a>
     <div class="scrollblock block-branching">
-        <h2>branching</h2>
+        <h2>Attach to an existing attached screen</h2>
         <p>
-            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
-        </p>
-        <img src="img/branches.png" alt="" />
-        <p>
-            create a new branch named "feature_x" and switch to it using<br />
-            <code>hg branch feature_x</code><br />
-            <code>hg commit -m "start feature_x branch"</code><br />
-            switch back to default<br />
-            <code>hg update default</code><br />
-            and close the branch<br />
-            <code>hg update feature_x</code><br />
-            <code>hg commit -m 'close feature_x' --close-branch</code><br />
-            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
-            <code>hg push -b &lt;branch&gt;</code>
+            This actually happens sometimes, in that case just <br />
+	    <code>screen -d -r <your_PID/your_session_name></code><br />
         </p>
     </div>
-    <a name="update"></a>
+    <a name="exit"></a>
     <div class="scrollblock block-merging">
-        <h2>update &amp; merge</h2>
+        <h2>exit screen</h2>
         <p>
-            to update your local repository to the newest commit, execute <br />
-            <code>hg pull</code><br />
-            in your working directory to <i>fetch</i> remote changes.<br />
-            and <i>merge</i> if necessary<br />
-            <code>hg merge</code><br />
-            to merge another branch into your active branch (e.g. master), use<br />
-            <code>hg merge &lt;branch&gt;</code><br />
-            in both cases hg tries to auto-merge changes. Unfortunately, this is not always possible and results in <i>conflicts</i>.
-            You are responsible to merge those <i>conflicts</i>
-            manually by editing the files shown by hg. After changing, you need to commit the results of the merge with<br />
-            <code>hg commit -m "Merge message"</code><br />
-            before merging changes, you can also preview them by using<br />
-            <code>hg diff -r &lt;source_branch&gt;:&lt;target_branch&gt;</code>
-        </p>
-    </div>
-    <a name="tagging"></a>
-    <div class="scrollblock block-tagging">
-        <h2>tagging</h2>
-        <p>
-            it's recommended to create tags for software releases. this is a known concept, which also exists in SVN. You can create a new tag named <i>1.0.0</i> by executing<br />
-            <code>hg tag -r 1b2e1d63ff 1.0.0</code><br />
-            <code>hg tag 1.0.0</code><br />
-            the <i>1b2e1d63ff</i> stands for the first 10 characters of the commit id you want to reference with your tag. You can get the commit id by looking at the... <br />
-        </p>
-    </div>
-    <a name="log"></a>
-    <div class="scrollblock block-log">
-        <h2>log</h2>
-        <p>
-            in its simplest form, you can study repository history using..
-            <code>hg log</code><br />
-            You can add a lot of parameters to make the log look like what you want. To see only the commits of a certain author:<br />
-            <code>hg log -u bob</code><br />
-            These are just a few of the possible parameters you can use. For more, see
-            <code>hg help log</code><br />
-        </p>
-    </div>
-    <a name="checkout-replace"></a>
-    <div class="scrollblock block-checkout-replace">
-        <h2>replace local changes</h2>
-        <p>
-            In case you did something wrong (which for sure never happens ;) you can replace local changes using the command<br />
-            <code>hg update -C</code><br />
-            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
-        </p>
-        <p>
-            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
-            <code>hg pull</code><br />
-            <code>hg update -r default -C</code>
+            Inside of an already attached screen, just type <br />
+	    <code>exit</code>.<br />
         </p>
     </div>
 <!--     <a name="hints"></a>
@@ -192,43 +136,44 @@
     <a name="resources"></a>
     <div class="scrollblock block-resources">
         <h2>links & resources</h2>
-        <h3>graphical clients</h3>
+        <h3>official manual</h3>
         <p>
             <ul>
-                <li><a href="http://www.sourcetreeapp.com/">Source Tree (OSX & Windows, free)</a></li>
+                <li><a href="https://www.gnu.org/software/screen/manual/screen.html">GNU Screen Manual</a></li>
             </ul>
         </p>
-        <h3>guides</h3>
+        <h3>Stack Overflow Help</h3>
         <p>
             <ul>
-                <li><a href="http://hginit.com/">Hg Init: a Mercurial tutorial</a></li>
-                <li><a href="http://mercurial.selenic.com/wiki/GitConcepts">Mercurial for Git users</a></li>
+                <li><a href="https://stackoverflow.com/a/3309696/992834">SO: Renaming an existing session</a></li>
+                <li><a href="https://stackoverflow.com/a/23436999/992834">SO: Force detach screen like a boss</a></li>
             </ul>
         </p>
 
-
-
-        <h3>get help</h3>
-        <p>
-            <ul>
-                <li><a href="http://mercurial.selenic.com/wiki/MailingLists">Hg User Mailing Lists</a></li>
-            </ul>
-        </p>
     </div>
     <a name="comments"></a>
     <div class="scrollblock block-comments">
         <h2>comments</h2>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'hg-guide'; // required: replace example with your forum shortname
+<div id="disqus_thread"></div>
+<script>
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-kmanalo-github-io-screen-guide.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
