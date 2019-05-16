@@ -58,11 +58,6 @@
 	<p>If you've done this before and you just want to start cleanly, you could kill all screens on a server using 
            <br /><code>pkill screen</code> first.
 	</p>
-	<p> Like you can read about in <br /><code>man screen</code><br />, 
-	screen is a "full-screen window manager".  When you launch screen in a terminal, 
-	you have basically started a window.  That means that if you are dropped from your spotty Wifi, make your laptop go to sleep, or disconnect from ssh, you can go back to exactly what you were doing because you were using a screen.
-	In the middle of a long-running command? Put it under a 'screen'.
-	</p>
         <p>
 	To start, it's easy just type <code>screen</code>.  Then you are under a screen! To help you understand, immediately type in your shell something like
 	<br /><code>echo this is my first screen</code><br />
@@ -76,7 +71,7 @@
             <br /><code>echo $HOSTNAME</code><br />
             and be sure to 
 	    <br /><code>ssh $HOSTNAME</code><br />
-	    Some centers like to have round-robin login nodes, so ssh to the right server.
+	    Some places like to have round-robin login nodes, so ssh to the right server.
         </p>
     </div>
     <a name="detach"></a>
